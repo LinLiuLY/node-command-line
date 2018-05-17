@@ -4,10 +4,16 @@
   "description": "CLI utility to read files",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "test": "jest --coverage"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
-    "csv": "^3.0.2",
     "inquirer": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
   }
 }
