@@ -1,24 +1,18 @@
-/**
- * Recursive prompt example
- * Allows user to choose when to exit prompt
- */
+import inquirer from 'inquirer';
+import chalk from 'chalk';
 
-'use strict';
-
-const inquirer = require('inquirer');
-const chalk = require('chalk');
-let output = [];
+const output = [];
 
 const questions = [
   {
     type: 'input',
     name: 'tvShow',
-    message: "What's your favorite TV show?"
-  }
+    message: "What's your favorite TV show?",
+  },
 ];
 
 function ask() {
-  inquirer.prompt(questions).then(answers => {
+  inquirer.prompt(questions).then((answers) => {
     const currentAnswer = answers.tvShow;
 
     output.push(currentAnswer);

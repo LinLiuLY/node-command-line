@@ -1,11 +1,9 @@
 {
   "name": "node-command-line",
   "version": "0.0.1",
-  "description": "CLI utility to read files",
-  "main": "index.js",
-  "license": "MIT",
+  "description": "CLI utility to read input",
   "scripts": {
-    "start": "node index",
+    "start": "babel-node ./src/index.js",
     "test": "jest --coverage",
     "prettify": "prettier --single-quote --write \"src/**/*.js\"",
     "eslint": "eslint src"
@@ -16,6 +14,8 @@
     "inquirer": "^5.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
