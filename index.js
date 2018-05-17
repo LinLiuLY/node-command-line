@@ -1,8 +1,9 @@
+//Runtime User Inputs
 //node index --list input/employees.csv
 
-var program = require('commander');
-var inquirer = require('inquirer');
-
+const program = require('commander');
+const inquirer = require('inquirer');
+const chalk = require('chalk');
 const csv = require('csv');
 const fs = require('fs');
 
@@ -11,9 +12,7 @@ program
   .option('-l, --list [list]', 'list of customers in CSV file')
   .parse(process.argv);
 
-//Runtime User Inputs
-//node index --list input/employees.csv
-let questions = [
+const questions = [
   {
     type : "input",
     name : "sender.email",
@@ -32,8 +31,8 @@ let questions = [
 ];
 
 let contactList = [];
-let parse = csv.parse;
-let stream = fs.createReadStream(program.list)
+const parse = csv.parse;
+const stream = fs.createReadStream(program.list)
   .pipe(parse({ delimiter : "," }));
 
 stream
@@ -48,5 +47,6 @@ stream
   .on("end", function () {
     inquirer.prompt(questions).then(function (answers) {
       console.log(answers);
+      console.log(chalk.green(contactList.length));
     });
   });
