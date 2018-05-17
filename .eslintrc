@@ -1,0 +1,18 @@
+{
+  "env": {
+    "commonjs": true
+  },
+  "plugins": ["prettier"],
+  "extends": "prettier",
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
+}
