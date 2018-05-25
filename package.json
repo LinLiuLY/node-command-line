@@ -4,11 +4,12 @@
   "description": "CLI utility to read input",
   "scripts": {
     "start": "babel-node ./src/index.js",
-    "test": "jest --coverage",
+    "test": "jest --watch",
     "prettify": "prettier --single-quote --write \"src/**/*.js\"",
-    "eslint": "eslint src"
+    "eslint": "eslint src --fix && eslint src"
   },
   "dependencies": {
+    "babel-preset-stage-3": "^6.24.1",
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "inquirer": "^5.2.0"
@@ -22,5 +23,8 @@
     "eslint-plugin-jest": "^21.15.1",
     "jest": "^22.4.3",
     "prettier": "1.12.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
 }
